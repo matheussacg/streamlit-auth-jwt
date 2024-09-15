@@ -32,6 +32,8 @@ class SessionState:
                 self.name = decoded_token.get("name")
                 cookie_manager.set("access_token", self.access_token)
                 return True
+        else:
+            st.error("Credenciais inválidas. Tente novamente.")
         return False
 
     def logout(self):
