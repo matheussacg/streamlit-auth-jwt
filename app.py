@@ -6,8 +6,6 @@ from utils.styles import remove_st_decoration
 
 remove_st_decoration()
 
-render_menu()
-
 state = get_state()
 if state.authenticated:
     st.title("This page is available to all users")
@@ -15,3 +13,5 @@ if state.authenticated:
 else:
     st.title("Welcome")
     st.markdown("Please log in to access the application.")
+
+render_menu()
