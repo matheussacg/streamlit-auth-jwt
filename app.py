@@ -2,17 +2,10 @@ import streamlit as st
 st.set_page_config(page_title="Home Page", page_icon="🏡")
 from auth.state import get_state
 from auth.menu import render_menu
+from utils.styles import remove_st_decoration
 
+remove_st_decoration()
 
-def remove_menu_items():
-    st.markdown("""
-    <style>
-        [data-testid="stDecoration"] {
-            display: none;
-        }
-    </style>""", unsafe_allow_html=True)
-
-remove_menu_items()
 render_menu()
 
 state = get_state()

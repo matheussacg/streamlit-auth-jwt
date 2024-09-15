@@ -1,16 +1,11 @@
 import streamlit as st
 from auth.state import get_state
 from auth.menu import render_menu
+from utils.styles import remove_st_decoration
 
-def remove_menu_items():
-    st.markdown("""
-    <style>
-        [data-testid="stDecoration"] {
-            display: none;
-        }
-    </style>""", unsafe_allow_html=True)
 
-remove_menu_items()
+remove_st_decoration()
+
 render_menu()
 
 state = get_state()
