@@ -1,0 +1,140 @@
+
+[global]
+
+# Por padrão, o Streamlit exibe um aviso quando um valor padrão de um widget é
+# definido tanto na função que o cria quanto via chave no st.session_state.
+# Se quiser desativar esse aviso, defina como True.
+# Padrão: false
+disableWidgetStateDuplicationWarning = false
+
+# Se True, mostrará um aviso ao executar um script habilitado para o Streamlit
+# via "python meu_script.py".
+# Padrão: true
+showWarningOnDirectExecution = true
+
+[logger]
+
+# Nível de log: 'error', 'warning', 'info' ou 'debug'.
+# Padrão: 'info'
+level = "info"
+
+# Formato da mensagem de log. Se logger.datetimeFormat for definido,
+# as mensagens de log terão o formato %(asctime)s.%(msecs)03d %(message)s.
+# Padrão: "%(asctime)s %(message)s"
+messageFormat = "%(asctime)s %(message)s"
+
+[client]
+
+# Controla se exceções não capturadas e avisos de depreciação são exibidos no navegador.
+# Padrão: true
+showErrorDetails = true
+
+# Modo de visibilidade da barra de ferramentas e menu de opções.
+# Valores permitidos: "auto", "developer", "viewer", "minimal".
+# Padrão: "auto"
+toolbarMode = "minimal"
+
+# Controla se a navegação da barra lateral é exibida em um app com várias páginas.
+# Padrão: false
+showSidebarNavigation = false
+
+[runner]
+
+# Permite escrever variáveis diretamente no app.
+# Padrão: true
+magicEnabled = true
+
+# Trata requisições de reinicialização do script imediatamente, sem aguardar pontos de rendimento.
+# Padrão: true
+fastReruns = true
+
+# Levanta uma exceção ao adicionar dados não serializáveis ao Session State.
+# Padrão: false
+enforceSerializableSessionState = false
+
+# Ajusta como widgets coercem membros de Enum durante reexecuções.
+# Valores permitidos: "off", "nameOnly", "nameAndValue".
+# Padrão: "nameOnly"
+enumCoercion = "nameOnly"
+
+[server]
+
+# Lista de pastas que não devem ser monitoradas.
+# Padrão: []
+folderWatchBlacklist = []
+
+# Tipo de monitoramento de arquivos: "auto", "watchdog", "poll", "none".
+# Padrão: "auto"
+fileWatcherType = "auto"
+
+# Chave simétrica usada para gerar cookies assinados.
+# Padrão: chave gerada aleatoriamente.
+cookieSecret = "skajdhfb93285ykjfadbsnkfajsdnbf023985y3tijhgbfdakjfan"
+
+# Se false, tentará abrir uma janela do navegador ao iniciar.
+# Padrão: false
+headless = false
+
+# Roda o script automaticamente ao salvar modificações no disco.
+# Padrão: false
+runOnSave = false
+
+# Porta onde o servidor ouvirá conexões do navegador.
+# Padrão: 8501
+port = 8501
+
+# Habilita suporte para CORS para maior segurança.
+# Padrão: true
+enableCORS = false
+
+# Habilita proteção contra XSRF para maior segurança.
+# Padrão: true
+enableXsrfProtection = false
+
+# Tamanho máximo de arquivos enviados via file_uploader, em MB.
+# Padrão: 200
+maxUploadSize = 200
+
+# Tamanho máximo de mensagens enviadas via WebSocket, em MB.
+# Padrão: 200
+maxMessageSize = 200
+
+[browser]
+
+# Endereço IP ou DNS onde o app está acessível.
+# Padrão: "localhost"
+serverAddress = "localhost"
+
+# Envia estatísticas de uso para o Streamlit.
+# Padrão: false
+gatherUsageStats = false
+
+# Porta onde os usuários acessam o app.
+# Padrão: 8501
+serverPort = 8501
+
+[theme]
+
+# Tema base que seu tema personalizado herda: "light" ou "dark".
+# Padrão: dark
+base = "dark"
+
+# Cor de destaque primária para elementos interativos.
+# Padrão: "#f0f0f0"
+primaryColor = "#f0f0f0"
+
+# Cor de fundo da área principal.
+# Padrão: "#000000"
+backgroundColor = "#000000"
+
+# Cor de fundo usada na barra lateral e widgets.
+# Padrão: "#1f1f1f"
+secondaryBackgroundColor = "#1f1f1f"
+
+# Cor usada para quase todos os textos.
+# Padrão: "#f0f0f0"
+textColor = "#f0f0f0"
+
+# Fonte usada no app, exceto em blocos de código: "sans serif", "serif", "monospace".
+# Padrão: "serif"
+font = "monospace"
