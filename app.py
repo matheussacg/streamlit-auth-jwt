@@ -1,21 +1,24 @@
 import streamlit as st
 st.set_page_config(page_title="Home Page", page_icon="🏡")
-from auth.menu import menu
+from auth.state import get_state
+from auth.menu import render_menu
 
 
 def remove_menu_items():
-	st.markdown("""
-	<style>
-		[data-testid="stDecoration"] {
-			display: none;
-		}
+    st.markdown("""
+    <style>
+        [data-testid="stDecoration"] {
+            display: none;
+        }
+    </style>""", unsafe_allow_html=True)
 
-	</style>""",
-	unsafe_allow_html=True)
- 
 remove_menu_items()
-menu()
+render_menu()
 
-# Here goes your normal streamlit app
-st.title("This page is available to all users")
-st.markdown(f"You are currently logged with the role of {st.session_state.role}.")
+state = get_state()
+if state.authenticated:
+    st.title("This page is available to all users")
+    st.markdown(f"You are currently logged with the role of {state.role}.")
+else:
+    st.title("Welcome")
+    st.markdown("Please log in to access the application.")

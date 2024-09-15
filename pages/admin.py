@@ -1,16 +1,27 @@
 import streamlit as st
-from app import remove_menu_items
-from auth.menu import menu_with_redirect
+from auth.state import get_state
+from auth.menu import render_menu
+
+def remove_menu_items():
+    st.markdown("""
+    <style>
+        [data-testid="stDecoration"] {
+            display: none;
+        }
+    </style>""", unsafe_allow_html=True)
 
 remove_menu_items()
+render_menu()
 
-# Redirect to app.py if not logged in, otherwise show the navigation menu
-menu_with_redirect()
+state = get_state()
 
-# Verify the user's role
-if st.session_state.role not in ["admin", "super-admin"]:
+if not state.authenticated:
+    st.warning("Please log in to access this page.")
+    st.switch_page("app.py")
+
+if state.role not in ["admin", "super-admin"]:
     st.warning("You do not have permission to view this page.")
     st.stop()
 
 st.title("This page is available to all admins")
-st.markdown(f"You are currently logged with the role of {st.session_state.role}.")
+st.markdown(f"You are currently logged with the role of {state.role}.")
