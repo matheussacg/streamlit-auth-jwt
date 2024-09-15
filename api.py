@@ -6,7 +6,7 @@ from passlib.context import CryptContext
 from pydantic import BaseModel
 from enum import Enum
 from datetime import datetime, timedelta
-
+import jwt
 from dotenv import load_dotenv
 import os
 
