@@ -1,10 +1,13 @@
 import streamlit as st
 from auth.state import get_state
 
+
 def render_menu():
     state = get_state()
     if not state.check_authentication():
         with st.form("login_form"):
+            st.title("Welcome")
+            st.markdown("Please log in to access the application.")
             username = st.text_input("Username")
             password = st.text_input("Password", type="password")
             submitted = st.form_submit_button("Log in")
