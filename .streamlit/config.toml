@@ -73,7 +73,7 @@ cookieSecret = "skajdhfb93285ykjfadbsnkfajsdnbf023985y3tijhgbfdakjfan"
 
 # Se false, tentará abrir uma janela do navegador ao iniciar.
 # Padrão: false
-headless = false
+headless = true
 
 # Roda o script automaticamente ao salvar modificações no disco.
 # Padrão: false
